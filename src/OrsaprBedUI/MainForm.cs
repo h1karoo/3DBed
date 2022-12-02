@@ -12,12 +12,13 @@ using ModelParameters;
 
 namespace OrsaprBedUI
 {
+    // TODO: XML
     public partial class MainForm : Form
     {
         /// <summary>
         /// Словарь для хранения сведений о TextBox
         /// </summary>
-        private readonly Dictionary<TextBox, Action<ModelParameters.BedParameters, string>>
+        private readonly Dictionary<TextBox, Action<BedParameters, string>>
             _textBoxDictionary;
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace OrsaprBedUI
         /// </summary>
         private readonly List<Label> _labelList;
 
+        // TODO: XML
         public MainForm()
         {
             InitializeComponent();
@@ -54,21 +56,14 @@ namespace OrsaprBedUI
                     textBoxWidth,
                     (BedParameters bed, string text) =>
                     {
-                        try
-                        {
-                            bed.Width.Value = double.Parse(text);
-                        }
-                        catch (Exception exception)
-                        {
-                            textBoxWidth.BackColor = Color.Red;
-                            MessageBox.Show(exception.Message);
-                        }
-                    }
+						bed.Width.Value = double.Parse(text);
+					}
                 },
                 {
                     textBoxLength,
                     (BedParameters bed, string text) =>
                     {
+                        // TODO: убрать try
                         try
                         {
                             bed.Length.Value = double.Parse(text);
@@ -83,9 +78,10 @@ namespace OrsaprBedUI
                 {
                     textBoxHeight,
                     (BedParameters bed, string text) =>
-                    {
+					{
+						// TODO: убрать try
                         try
-                        {
+						{
                             bed.Height.Value = double.Parse(text);
                         }
                         catch (Exception exception)
@@ -98,9 +94,10 @@ namespace OrsaprBedUI
                 {
                     textBoxThickness,
                     (BedParameters bed, string text) =>
-                    {
+					{
+						// TODO: убрать try
                         try
-                        {
+						{
                             bed.Thickness.Value = double.Parse(text);
                         }
                         catch (Exception exception)
@@ -113,9 +110,10 @@ namespace OrsaprBedUI
                 {
                     textBoxDistance,
                     (BedParameters bed, string text) =>
-                    {
+					{
+						// TODO: убрать try
                         try
-                        {
+						{
                             bed.Distance.Value = double.Parse(text);
                         }
                         catch (Exception exception)
@@ -170,6 +168,7 @@ namespace OrsaprBedUI
         {
             var currentTextBox = (TextBox)sender;
             var currentAction = _textBoxDictionary[currentTextBox];
+            // TODO: string
             if (!String.IsNullOrEmpty(currentTextBox.Text))
             {
                 try
@@ -196,12 +195,13 @@ namespace OrsaprBedUI
         /// Метод для проверки на соответствие сохраненных и введенных параметров
         /// </summary>
         /// <returns></returns>
+        // TODO: Можно ли вынести в бизнесс-логику?
         private bool Validate()
         {
             var smallestUpperBound = Math.Min(_textBoxList.Count, _parameters.Count);
             for (var index = 0; index < smallestUpperBound; index++)
             {
-                if (_textBoxList[index].Text.ToString() != _parameters[index].Value.ToString())
+                if (_textBoxList[index].Text != _parameters[index].Value.ToString())
                 {
                     return false;
                 }
@@ -235,16 +235,21 @@ namespace OrsaprBedUI
             }
         }
 
+        // TODO: XML 
+        // TODO: переименовать кнопку
         private void buttonBuildBed_Click(object sender, EventArgs e)
         {
             _build.BuildBed(_bed);
         }
+
+        // TODO: нужен?
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxDistance_TextChanged(object sender, EventArgs e)
+        // TODO: нужен?
+		private void textBoxDistance_TextChanged(object sender, EventArgs e)
         {
 
         }

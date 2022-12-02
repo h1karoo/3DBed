@@ -2,6 +2,7 @@
 
 namespace ModelParameters
 {
+    // TODO: XML
     public class Parameter
     {
         /// <summary>
@@ -32,10 +33,12 @@ namespace ModelParameters
             get => _value;
             set
             {
+                // TODO: string
                 if (String.IsNullOrEmpty(NameParameter))
                 {
                     throw new ArgumentException("Имя параметра не определено");
                 }
+                // TODO: Зачем проверять мин и макс на положительность?
                 if (_maxValue > 0 && _minValue > 0)
                 {
                     if (value <= _maxValue && value >= _minValue)
@@ -64,7 +67,8 @@ namespace ModelParameters
             get => _maxValue;
             set
             {
-                if (_minValue > 0)
+				// TODO: зачем проверть _minValue в MaximumValue?
+				if (_minValue > 0)
                 {
                     if (value > _minValue)
                     {
@@ -97,7 +101,8 @@ namespace ModelParameters
             get => _minValue;
             set
             {
-                if (_maxValue > 0)
+				// TODO: также как и в MaximumValue
+				if (_maxValue > 0)
                 {
                     if (value < _maxValue)
                     {
@@ -136,6 +141,7 @@ namespace ModelParameters
             get => _defaultValue;
             set
             {
+	            // TODO: проверки мин и макс нужны?
                 if (_maxValue > 0 && _minValue > 0)
                 {
                     if (value <= _maxValue && value >= _minValue)
@@ -156,8 +162,10 @@ namespace ModelParameters
             }
         }
 
-        public Parameter() { }
+		// TODO: удалить, если не нужен
+		public Parameter() { }
 
+        // TODO: XML
         public Parameter(string name, double min, double max, double defaultValue)
         {
             this.MinimumValue = min;

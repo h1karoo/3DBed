@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace ModelParameters
 {
+    // TODO: XML
     public class BedParameters
     {
          /// <summary>
          /// Лист параметров
          /// </summary>
+         // TODO: не используется. Нужен?
          private readonly List<Parameter> parameters;
 
         /// <summary>
@@ -40,6 +42,8 @@ namespace ModelParameters
         /// </summary>
         public Parameter Distance { get; set; }
 
+        // TODO: XML
+        // TODO: не используется. Нужен?
         public void MaxValue()
         {
             Width.Value = Width.MaximumValue;
@@ -50,7 +54,9 @@ namespace ModelParameters
             
         }
 
-        public void MinValue()
+        // TODO: XML
+        // TODO: не используется. Нужен?
+		public void MinValue()
         {
             Width.Value = Width.MinimumValue;
             Length.Value = Length.MinimumValue;
@@ -70,17 +76,18 @@ namespace ModelParameters
             Distance.Value = Distance.DefaultValue;
         }
 
+        // TODO: XML
         public BedParameters()
         {
-            this.Width = new Parameter("Ширина кровати",
+            Width = new Parameter("Ширина кровати",
                 1000, 2000, 1000);
-            this.Length = new Parameter("Длина кровати",
+            Length = new Parameter("Длина кровати",
                 1800,2100,1800);
-            this.Height = new Parameter("Высота кровати",
+            Height = new Parameter("Высота кровати",
                 400, 800, 400);
-            this.Thickness = new Parameter("Толщина материала",
+            Thickness = new Parameter("Толщина материала",
                 8, 14, 10);
-            this.Distance = new Parameter("Расстояние от каркаса до верхней части кровати",
+            Distance = new Parameter("Расстояние от каркаса до верхней части кровати",
                 100, 250, 100);
 
             parameters = new List<Parameter>
