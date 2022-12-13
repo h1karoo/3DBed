@@ -2,9 +2,9 @@
 using Kompas6Constants3D;
 using System;
 using System.Runtime.InteropServices;
-// TODO: Не изменять значение на стандартное при ошибки
-// TODO: Не показывать сообщение каждый раз, достаточно просто подсветить
+// TODO: Не изменять значение на стандартное при ошибкe
 // TODO: Добавить зависимости
+
 
 namespace Kompas3DConnector
 {
@@ -25,7 +25,6 @@ namespace Kompas3DConnector
         {
             get
             {
-	            // TODO: RSDN
                 if (_instance == null)
                     _instance = new KompasConnector();
 
@@ -71,7 +70,6 @@ namespace Kompas3DConnector
                 KompasObject.Visible = true;
                 KompasObject.ActivateControllerAPI();
             }
-            // TODO: e не используется 
             catch (Exception e)
             {
                 KompasObject = null;
@@ -82,20 +80,11 @@ namespace Kompas3DConnector
         /// <summary>
         /// Метод для выгрузки и выхода из компаса
         /// </summary>
-        // TODO: не используется. Нужен?
-        public void UnloadKompas()
-        {
-            if (KompasObject != null)
-            {
-                KompasObject.Quit();
-                Marshal.ReleaseComObject(KompasObject);
-            }
-        }
+        // TODO: не используется. Нужен? UnloadKompas()
 
         /// <summary>
         /// Конструктор класса
         /// </summary>
         // TODO: убрать, если не будет логики внутри
-        private KompasConnector() { }
     }
 }

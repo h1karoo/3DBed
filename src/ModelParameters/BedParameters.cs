@@ -6,14 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ModelParameters
-{
-    // TODO: XML
+{    
+    /// <summary>
+    /// Класс, содержащий параметры кровати
+    /// </summary>
     public class BedParameters
     {
          /// <summary>
          /// Лист параметров
          /// </summary>
-         // TODO: не используется. Нужен?
          private readonly List<Parameter> parameters;
 
         /// <summary>
@@ -42,8 +43,9 @@ namespace ModelParameters
         /// </summary>
         public Parameter Distance { get; set; }
 
-        // TODO: XML
-        // TODO: не используется. Нужен?
+        // <summary>
+        /// Свойство, присваивающее максимальное значение "
+        /// </summary>
         public void MaxValue()
         {
             Width.Value = Width.MaximumValue;
@@ -54,9 +56,10 @@ namespace ModelParameters
             
         }
 
-        // TODO: XML
-        // TODO: не используется. Нужен?
-		public void MinValue()
+        // <summary>
+        /// Свойство, присваивающее минимальное значение "
+        /// </summary>
+        public void MinValue()
         {
             Width.Value = Width.MinimumValue;
             Length.Value = Length.MinimumValue;
@@ -76,18 +79,17 @@ namespace ModelParameters
             Distance.Value = Distance.DefaultValue;
         }
 
-        // TODO: XML
         public BedParameters()
         {
-            Width = new Parameter("Ширина кровати",
+            this.Width = new Parameter("Ширина кровати",
                 1000, 2000, 1000);
-            Length = new Parameter("Длина кровати",
+            this.Length = new Parameter("Длина кровати",
                 1800,2100,1800);
-            Height = new Parameter("Высота кровати",
+            this.Height = new Parameter("Высота кровати",
                 400, 800, 400);
-            Thickness = new Parameter("Толщина материала",
+            this.Thickness = new Parameter("Толщина материала",
                 8, 14, 10);
-            Distance = new Parameter("Расстояние от каркаса до верхней части кровати",
+            this.Distance = new Parameter("Расстояние от каркаса до верхней части кровати",
                 100, 250, 100);
 
             parameters = new List<Parameter>

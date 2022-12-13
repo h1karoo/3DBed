@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33110.190
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrsaprBedUI", "OrsaprBedUI\OrsaprBedUI.csproj", "{9474F568-4B90-4E03-A190-7FB4E39FA1B1}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelParameters", "ModelParameters\ModelParameters.csproj", "{3557B33E-946D-4026-91B9-A9D344091635}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBuilder", "ModelBuilder\ModelBuilder.csproj", "{1A6AEFC6-C596-4C04-B230-2A288E1BA945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrsaprBed.UnitTests", "OrsaprBed.UnitTests\OrsaprBed.UnitTests.csproj", "{DEA7483B-3101-48A5-A148-86F1F2B56719}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{1A6AEFC6-C596-4C04-B230-2A288E1BA945}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A6AEFC6-C596-4C04-B230-2A288E1BA945}.Release|x64.ActiveCfg = Release|x64
 		{1A6AEFC6-C596-4C04-B230-2A288E1BA945}.Release|x64.Build.0 = Release|x64
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Debug|x64.ActiveCfg = Debug|x64
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Debug|x64.Build.0 = Debug|x64
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Release|x64.ActiveCfg = Release|x64
+		{DEA7483B-3101-48A5-A148-86F1F2B56719}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

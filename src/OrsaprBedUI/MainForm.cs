@@ -12,7 +12,9 @@ using ModelParameters;
 
 namespace OrsaprBedUI
 {
-    // TODO: XML
+    /// <summary>
+    /// Класс, отвечающий за форму
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
@@ -47,6 +49,9 @@ namespace OrsaprBedUI
         private readonly List<Label> _labelList;
 
         // TODO: XML
+        /// <summary>
+        /// Форма, обрабатывающая введенные значения
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -56,71 +61,45 @@ namespace OrsaprBedUI
                     textBoxWidth,
                     (BedParameters bed, string text) =>
                     {
-						bed.Width.Value = double.Parse(text);
-					}
+                        bed.Width.Value = double.Parse(text);
+                    }
                 },
                 {
                     textBoxLength,
                     (BedParameters bed, string text) =>
                     {
                         // TODO: убрать try
-                        try
-                        {
-                            bed.Length.Value = double.Parse(text);
-                        }
-                        catch (Exception exception)
-                        {
-                            textBoxLength.BackColor = Color.Red;
-                            MessageBox.Show(exception.Message);
-                        }
+                        bed.Length.Value = double.Parse(text);
                     }
                 },
                 {
                     textBoxHeight,
                     (BedParameters bed, string text) =>
-					{
+                    {
 						// TODO: убрать try
-                        try
 						{
                             bed.Height.Value = double.Parse(text);
                         }
-                        catch (Exception exception)
-                        {
-                            textBoxHeight.BackColor = Color.Red;
-                            MessageBox.Show(exception.Message);
-                        };
                     }
                 },
                 {
                     textBoxThickness,
                     (BedParameters bed, string text) =>
-					{
+                    {
 						// TODO: убрать try
-                        try
 						{
                             bed.Thickness.Value = double.Parse(text);
                         }
-                        catch (Exception exception)
-                        {
-                            textBoxThickness.BackColor = Color.Red;
-                            MessageBox.Show(exception.Message);
-                        };
                     }
                 },
                 {
                     textBoxDistance,
                     (BedParameters bed, string text) =>
-					{
+                    {
 						// TODO: убрать try
-                        try
 						{
                             bed.Distance.Value = double.Parse(text);
                         }
-                        catch (Exception exception)
-                        {
-                            textBoxDistance.BackColor = Color.Red;
-                            MessageBox.Show(exception.Message);
-                        };
                     }
                 }
 
@@ -152,7 +131,6 @@ namespace OrsaprBedUI
                 labelThickness,
                 labelDistance,
             };
-
             _bed.DefaultValue();
             UpdateFormFields();
             SetLimits();
@@ -169,7 +147,7 @@ namespace OrsaprBedUI
             var currentTextBox = (TextBox)sender;
             var currentAction = _textBoxDictionary[currentTextBox];
             // TODO: string
-            if (!String.IsNullOrEmpty(currentTextBox.Text))
+            if (!string.IsNullOrEmpty(currentTextBox.Text))
             {
                 try
                 {
@@ -184,13 +162,11 @@ namespace OrsaprBedUI
                 }
                 catch (ArgumentException exception)
                 {
-                    
-                    currentTextBox.BackColor = Color.Red;
+                    currentTextBox.BackColor = Color.LightPink;
                     MessageBox.Show(exception.Message);
                 }
             }
         }
-
         /// <summary>
         /// Метод для проверки на соответствие сохраненных и введенных параметров
         /// </summary>
@@ -235,24 +211,20 @@ namespace OrsaprBedUI
             }
         }
 
-        // TODO: XML 
-        // TODO: переименовать кнопку
+
+
+        /// <summary>
+        /// Кнопка для построения кровати
+        /// </summary>
         private void buttonBuildBed_Click(object sender, EventArgs e)
         {
             _build.BuildBed(_bed);
         }
 
         // TODO: нужен?
-        private void MainForm_Load(object sender, EventArgs e)
-        {
 
-        }
 
         // TODO: нужен?
-		private void textBoxDistance_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

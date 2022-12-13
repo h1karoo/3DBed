@@ -1,11 +1,16 @@
-﻿using Kompas3DConnector;
+﻿using System;
+using Kompas3DConnector;
 using Kompas6API5;
 using Kompas6Constants3D;
 using ModelParameters;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ModelBuilder
 {
     // TODO: XML
+    /// <summary>
+    ///Класс для построения кровати
+    /// </summary>
     public class BedBuilder
     {
         /// <summary>
@@ -16,21 +21,78 @@ namespace ModelBuilder
             KompasConnector.Instance.InitializationKompas();
             // TODO: длина строк
             // Создание каркаса
-            CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, -bed.Width.Value / 2 + bed.Thickness.Value,
-                bed.Length.Value - bed.Thickness.Value * 2, bed.Width.Value - bed.Thickness.Value * 2, bed.Thickness.Value, 0);
-            // Создание правой боковой стенки
-            CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, -bed.Width.Value / 2,
-                bed.Length.Value - bed.Thickness.Value * 2, bed.Thickness.Value, bed.Height.Value, bed.Distance.Value);
-            // Создание левой боковой стенки
-            CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, bed.Width.Value / 2 - bed.Thickness.Value,
-                bed.Length.Value - bed.Thickness.Value * 2, bed.Thickness.Value, bed.Height.Value, bed.Distance.Value);
-            // Создание задней стенки
-            CreateRectangle(-bed.Length.Value / 2, -bed.Width.Value / 2,
-                bed.Thickness.Value, bed.Width.Value, bed.Height.Value, bed.Distance.Value);
-            // Создание изголовья
-            CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value, -bed.Width.Value / 2,
-                bed.Thickness.Value, bed.Width.Value, bed.Height.Value, bed.Distance.Value);
-
+            {
+                if (bed.Width.Value > 1500)
+                {
+                    CreateRectangle(
+                        -bed.Length.Value / 2 + bed.Thickness.Value,
+                        -bed.Width.Value / 2 + bed.Thickness.Value,
+                        bed.Length.Value - bed.Thickness.Value * 2,
+                        bed.Width.Value - bed.Thickness.Value * 2,
+                        bed.Thickness.Value * 2, 0);
+                    // Создание правой боковой стенки
+                    CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
+                        -bed.Width.Value / 2,
+                        bed.Length.Value - bed.Thickness.Value * 2,
+                        bed.Thickness.Value * 2, bed.Height.Value,
+                        bed.Distance.Value);
+                    // Создание левой боковой стенки
+                    CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
+                        bed.Width.Value / 2 - bed.Thickness.Value,
+                        bed.Length.Value - bed.Thickness.Value * 2,
+                        bed.Thickness.Value * 2, bed.Height.Value,
+                        bed.Distance.Value);
+                    // Создание задней стенки
+                    CreateRectangle(-bed.Length.Value / 2,
+                        -bed.Width.Value / 2,
+                        bed.Thickness.Value * 2,
+                        bed.Width.Value,
+                        bed.Height.Value,
+                        bed.Distance.Value);
+                    // Создание изголовья
+                    CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value,
+                        -bed.Width.Value / 2,
+                        bed.Thickness.Value * 2,
+                        bed.Width.Value,
+                        bed.Height.Value,
+                        bed.Distance.Value);
+                }
+                else
+                {
+                    CreateRectangle(
+                        -bed.Length.Value / 2 + bed.Thickness.Value,
+                        -bed.Width.Value / 2 + bed.Thickness.Value,
+                        bed.Length.Value - bed.Thickness.Value * 2,
+                        bed.Width.Value - bed.Thickness.Value * 2,
+                        bed.Thickness.Value, 0);
+                    // Создание правой боковой стенки
+                    CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
+                        -bed.Width.Value / 2,
+                        bed.Length.Value - bed.Thickness.Value * 2,
+                        bed.Thickness.Value, bed.Height.Value,
+                        bed.Distance.Value);
+                    // Создание левой боковой стенки
+                    CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
+                        bed.Width.Value / 2 - bed.Thickness.Value,
+                        bed.Length.Value - bed.Thickness.Value * 2,
+                        bed.Thickness.Value, bed.Height.Value,
+                        bed.Distance.Value);
+                    // Создание задней стенки
+                    CreateRectangle(-bed.Length.Value / 2,
+                        -bed.Width.Value / 2,
+                        bed.Thickness.Value,
+                        bed.Width.Value,
+                        bed.Height.Value,
+                        bed.Distance.Value);
+                    // Создание изголовья
+                    CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value,
+                        -bed.Width.Value / 2,
+                        bed.Thickness.Value,
+                        bed.Width.Value,
+                        bed.Height.Value,
+                        bed.Distance.Value);
+                }
+            }
         }
         /// <summary>
         /// Метод для построения параллелипипеда

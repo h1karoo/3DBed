@@ -2,7 +2,9 @@
 
 namespace ModelParameters
 {
-    // TODO: XML
+    /// <summary>
+    /// Класс, хранящий значения параметра
+    /// </summary>
     public class Parameter
     {
         /// <summary>
@@ -33,12 +35,10 @@ namespace ModelParameters
             get => _value;
             set
             {
-                // TODO: string
-                if (String.IsNullOrEmpty(NameParameter))
+                if (string.IsNullOrEmpty(NameParameter))
                 {
                     throw new ArgumentException("Имя параметра не определено");
                 }
-                // TODO: Зачем проверять мин и макс на положительность?
                 if (_maxValue > 0 && _minValue > 0)
                 {
                     if (value <= _maxValue && value >= _minValue)
@@ -67,8 +67,7 @@ namespace ModelParameters
             get => _maxValue;
             set
             {
-				// TODO: зачем проверть _minValue в MaximumValue?
-				if (_minValue > 0)
+                if (_minValue > 0)
                 {
                     if (value > _minValue)
                     {
@@ -101,8 +100,7 @@ namespace ModelParameters
             get => _minValue;
             set
             {
-				// TODO: также как и в MaximumValue
-				if (_maxValue > 0)
+                if (_maxValue > 0)
                 {
                     if (value < _maxValue)
                     {
@@ -141,7 +139,6 @@ namespace ModelParameters
             get => _defaultValue;
             set
             {
-	            // TODO: проверки мин и макс нужны?
                 if (_maxValue > 0 && _minValue > 0)
                 {
                     if (value <= _maxValue && value >= _minValue)
@@ -162,10 +159,14 @@ namespace ModelParameters
             }
         }
 
-		// TODO: удалить, если не нужен
-		public Parameter() { }
+        /// <summary>
+        /// Свойство для тестов
+        /// </summary>
+        public Parameter() { }
 
-        // TODO: XML
+        /// <summary>
+        /// Свойство, запоминающее значение параметра
+        /// </summary>
         public Parameter(string name, double min, double max, double defaultValue)
         {
             this.MinimumValue = min;

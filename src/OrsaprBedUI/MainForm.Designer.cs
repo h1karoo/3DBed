@@ -109,7 +109,7 @@ namespace OrsaprBedUI
             // 
             // textBoxThickness
             // 
-            this.textBoxThickness.Location = new System.Drawing.Point(497, 117);
+            this.textBoxThickness.Location = new System.Drawing.Point(497, 110);
             this.textBoxThickness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxThickness.Name = "textBoxThickness";
             this.textBoxThickness.Size = new System.Drawing.Size(110, 23);
@@ -119,7 +119,7 @@ namespace OrsaprBedUI
             // labelThickness
             // 
             this.labelThickness.AutoSize = true;
-            this.labelThickness.Location = new System.Drawing.Point(36, 122);
+            this.labelThickness.Location = new System.Drawing.Point(36, 113);
             this.labelThickness.Name = "labelThickness";
             this.labelThickness.Size = new System.Drawing.Size(267, 15);
             this.labelThickness.TabIndex = 11;
@@ -127,18 +127,17 @@ namespace OrsaprBedUI
             // 
             // textBoxDistance
             // 
-            this.textBoxDistance.Location = new System.Drawing.Point(497, 144);
+            this.textBoxDistance.Location = new System.Drawing.Point(497, 137);
             this.textBoxDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDistance.Name = "textBoxDistance";
             this.textBoxDistance.Size = new System.Drawing.Size(110, 23);
             this.textBoxDistance.TabIndex = 14;
-            this.textBoxDistance.TextChanged += new System.EventHandler(this.textBoxDistance_TextChanged);
             this.textBoxDistance.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelDistance
             // 
             this.labelDistance.AutoSize = true;
-            this.labelDistance.Location = new System.Drawing.Point(36, 150);
+            this.labelDistance.Location = new System.Drawing.Point(36, 140);
             this.labelDistance.Name = "labelDistance";
             this.labelDistance.Size = new System.Drawing.Size(388, 15);
             this.labelDistance.TabIndex = 13;
@@ -165,7 +164,6 @@ namespace OrsaprBedUI
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Плагин Кровать";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
