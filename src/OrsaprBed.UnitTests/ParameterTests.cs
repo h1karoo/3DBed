@@ -5,7 +5,8 @@ using ModelParameters;
 
 namespace OrsaprBed.UnitTests
 {
-    [TestFixture]
+	// TODO: XML
+	[TestFixture]
     public class ParameterTests
     {
         [TestCase(TestName = "Позитивный метод для NameParameter, производится ввод и считывание " +

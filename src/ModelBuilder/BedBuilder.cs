@@ -7,7 +7,6 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ModelBuilder
 {
-    // TODO: XML
     /// <summary>
     ///Класс для построения кровати
     /// </summary>
@@ -19,7 +18,6 @@ namespace ModelBuilder
         public void BuildBed(BedParameters bed)
         {
             KompasConnector.Instance.InitializationKompas();
-            // TODO: длина строк
             // Создание каркаса
             {
                 if (bed.Width.Value > 1500)

@@ -6,12 +6,14 @@ using ModelParameters;
 
 namespace OrsaprBed.UnitTests
 {
+    // TODO: XML
     [TestFixture]
     public class NightstandParametersTests
     {
         /// <summary>
         /// Словарь для хранения сведения о параметров кровать
         /// </summary>
+        // TODO: RSDN
         private Dictionary<string, Parameter> TestingParameter
         {
             get
@@ -28,12 +30,22 @@ namespace OrsaprBed.UnitTests
             }
         }
 
-        /// <summary>
-        /// Лист с назаванием параметров
-        /// </summary>
-        /// <param name="nightstand">Экземпляр класса NightstandParameters</param>
-        /// <returns></returns>
-        private List<Parameter> InitializeParameters(BedParameters bed)
+		// TODO: Неверный порядок компонентов класса:
+		// TODO: константы
+		// TODO: статические поля
+		// TODO: обычные поля
+		// TODO: свойства
+		// TODO: события
+		// TODO: конструкторы
+		// TODO: публичные методы
+		// TODO: приватные методы
+		/// <summary>
+		/// Лист с назаванием параметров
+		/// </summary>
+		// TODO: ? 
+		/// <param name="nightstand">Экземпляр класса NightstandParameters</param>
+		/// <returns></returns>
+		private List<Parameter> InitializeParameters(BedParameters bed)
         {
             var parameters = new List<Parameter>
             {
@@ -61,7 +73,8 @@ namespace OrsaprBed.UnitTests
         {
             // Setup
             Parameter myParameter;
-            if (TestingParameter.TryGetValue(nameParameter, out myParameter))
+			// TODO: Зачем if\else? Можно просто использовать Assert.IsTrue()
+			if (TestingParameter.TryGetValue(nameParameter, out myParameter))
             {
                 Parameter sourceParameter = new Parameter(
                     "Testing Parameter",
@@ -73,9 +86,9 @@ namespace OrsaprBed.UnitTests
                 // Act
                 myParameter = sourceParameter;
                 var actualParameter = myParameter;
-
-                //Assert
-                NUnit.Framework.Assert.AreEqual(expectedParameter, actualParameter);
+               
+				//Assert
+				Assert.AreEqual(expectedParameter, actualParameter);
             }
             else
             {
@@ -99,8 +112,10 @@ namespace OrsaprBed.UnitTests
                 // Act
                 var actualValue = currentParameter.Value;
 
-                // Assert
-                NUnit.Framework.Assert.AreEqual(expectedValue, actualValue);
+				// Assert
+				// TODO: убрать везде пространство имен NUnit.Framework.
+				// TODO: Уже есть using на это простраснво имен
+				NUnit.Framework.Assert.AreEqual(expectedValue, actualValue);
             }
         }
 

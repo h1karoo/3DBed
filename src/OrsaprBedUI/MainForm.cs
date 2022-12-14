@@ -47,8 +47,7 @@ namespace OrsaprBedUI
         /// Лист c текстбоксами
         /// </summary>
         private readonly List<Label> _labelList;
-
-        // TODO: XML
+        
         /// <summary>
         /// Форма, обрабатывающая введенные значения
         /// </summary>
@@ -68,37 +67,36 @@ namespace OrsaprBedUI
                     textBoxLength,
                     (BedParameters bed, string text) =>
                     {
-                        // TODO: убрать try
                         bed.Length.Value = double.Parse(text);
                     }
                 },
                 {
                     textBoxHeight,
                     (BedParameters bed, string text) =>
-                    {
-						// TODO: убрать try
+					{
+						// TODO: Зачем вторые фигурные скобки?
 						{
-                            bed.Height.Value = double.Parse(text);
+							bed.Height.Value = double.Parse(text);
                         }
                     }
                 },
                 {
                     textBoxThickness,
                     (BedParameters bed, string text) =>
-                    {
-						// TODO: убрать try
+					{
+						// TODO: Зачем вторые фигурные скобки?
 						{
-                            bed.Thickness.Value = double.Parse(text);
+							bed.Thickness.Value = double.Parse(text);
                         }
                     }
                 },
                 {
                     textBoxDistance,
                     (BedParameters bed, string text) =>
-                    {
-						// TODO: убрать try
+					{
+						// TODO: Зачем вторые фигурные скобки?
 						{
-                            bed.Distance.Value = double.Parse(text);
+							bed.Distance.Value = double.Parse(text);
                         }
                     }
                 }
@@ -146,7 +144,6 @@ namespace OrsaprBedUI
         {
             var currentTextBox = (TextBox)sender;
             var currentAction = _textBoxDictionary[currentTextBox];
-            // TODO: string
             if (!string.IsNullOrEmpty(currentTextBox.Text))
             {
                 try
@@ -220,11 +217,6 @@ namespace OrsaprBedUI
         {
             _build.BuildBed(_bed);
         }
-
-        // TODO: нужен?
-
-
-        // TODO: нужен?
     }
 }
 

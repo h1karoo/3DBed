@@ -43,10 +43,11 @@ namespace ModelParameters
         /// </summary>
         public Parameter Distance { get; set; }
 
-        // <summary>
-        /// Свойство, присваивающее максимальное значение "
-        /// </summary>
-        public void MaxValue()
+		// <summary>
+		/// Свойство, присваивающее максимальное значение "
+		/// </summary>
+		// TODO: Лучше SetMaxValue
+		public void MaxValue()
         {
             Width.Value = Width.MaximumValue;
             Length.Value = Length.MaximumValue;
@@ -56,10 +57,11 @@ namespace ModelParameters
             
         }
 
-        // <summary>
-        /// Свойство, присваивающее минимальное значение "
-        /// </summary>
-        public void MinValue()
+		// <summary>
+		/// Свойство, присваивающее минимальное значение "
+		/// </summary>
+		// TODO: Лучше SetMinValue
+		public void MinValue()
         {
             Width.Value = Width.MinimumValue;
             Length.Value = Length.MinimumValue;
@@ -67,10 +69,11 @@ namespace ModelParameters
             Thickness.Value = Thickness.MinimumValue;
             Distance.Value = Distance.MinimumValue;
         }
-        /// <summary>
-        /// Свойство, присваивающее значение по умолчанию для зависимых параметров
-        /// </summary>
-        public void DefaultValue()
+		/// <summary>
+		/// Свойство, присваивающее значение по умолчанию для зависимых параметров
+		/// </summary>
+		// TODO: Лучше SetDefaultValue
+		public void DefaultValue()
         {
             Width.Value = Width.DefaultValue;
             Length.Value = Length.DefaultValue;
