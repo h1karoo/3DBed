@@ -7,6 +7,9 @@ using ModelParameters;
 namespace OrsaprBed.UnitTests
 {
     // TODO: XML
+    /// <summary>
+    /// Класс для тестирования параметров кровати
+    /// </summary>
     [TestFixture]
     public class NightstandParametersTests
     {

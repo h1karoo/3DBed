@@ -5,8 +5,11 @@ using ModelParameters;
 
 namespace OrsaprBed.UnitTests
 {
-	// TODO: XML
-	[TestFixture]
+    // TODO: XML
+    /// <summary>
+    /// Класс для тестирования NameParameter, Value, MinValue, MaxValue
+    /// </summary>
+    [TestFixture]
     public class ParameterTests
     {
         [TestCase(TestName = "Позитивный метод для NameParameter, производится ввод и считывание " +
@@ -23,7 +26,7 @@ namespace OrsaprBed.UnitTests
             var actualName = parameter.NameParameter;
 
             // Assert
-            NUnit.Framework.Assert.AreEqual(expectedName, actualName);
+            Assert.AreEqual(expectedName, actualName);
         }
 
         [TestCase(TestName = "Позитивный метод для Value, производится ввод и считывание " +
@@ -40,7 +43,7 @@ namespace OrsaprBed.UnitTests
             var actualValue = parameter.Value;
 
             // Assert
-            NUnit.Framework.Assert.AreEqual(expectedValue, actualValue);
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
         [TestCase(9.5, TestName = "Позитивный метод для Value, производится ввод и считывание " +
@@ -53,7 +56,7 @@ namespace OrsaprBed.UnitTests
             var parameter = new Parameter("Width", 10, 60, 50);
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -74,7 +77,7 @@ namespace OrsaprBed.UnitTests
             var sourceValue = 5;
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -94,7 +97,7 @@ namespace OrsaprBed.UnitTests
             parameter.MinimumValue = 2;
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -113,7 +116,7 @@ namespace OrsaprBed.UnitTests
             parameter.MaximumValue = 10;
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -143,7 +146,7 @@ namespace OrsaprBed.UnitTests
             var actualMaximumValue = parameter.MaximumValue;
 
             // Assert
-            NUnit.Framework.Assert.AreEqual(expectedMaximumValue, actualMaximumValue);
+            Assert.AreEqual(expectedMaximumValue, actualMaximumValue);
         }
 
         [TestCase(100, 50, TestName = "Позитивный метод для MaxValue и MinValue, производится ввод и считывание " +
@@ -162,7 +165,7 @@ namespace OrsaprBed.UnitTests
             }
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -192,7 +195,7 @@ namespace OrsaprBed.UnitTests
             var actualMinimumValue = parameter.MinimumValue;
 
             // Assert
-            NUnit.Framework.Assert.AreEqual(expectedMinimumValue, actualMinimumValue);
+            Assert.AreEqual(expectedMinimumValue, actualMinimumValue);
         }
 
         [TestCase(100, 50, TestName = "Позитивный метод для MaxValue и MinValue, производится ввод и считывание " +
@@ -211,7 +214,7 @@ namespace OrsaprBed.UnitTests
             }
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -232,7 +235,7 @@ namespace OrsaprBed.UnitTests
             var parameter = new Parameter();
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -250,7 +253,7 @@ namespace OrsaprBed.UnitTests
             var sourceDefaultValue = 5;
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -270,7 +273,7 @@ namespace OrsaprBed.UnitTests
             parameter.MinimumValue = 2;
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
@@ -290,7 +293,7 @@ namespace OrsaprBed.UnitTests
             parameter.MaximumValue = 10;
 
             // Assert
-            NUnit.Framework.Assert.Throws<ArgumentException>
+            Assert.Throws<ArgumentException>
             (() =>
             {
                 // Act
