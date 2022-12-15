@@ -14,7 +14,7 @@ namespace OrsaprBed.UnitTests
         /// Словарь для хранения сведения о параметров кровать
         /// </summary>
         // TODO: RSDN
-        private Dictionary<string, Parameter> TestingParameter
+        private Dictionary<string, Parameter> _testingParameter
         {
             get
             {
@@ -43,7 +43,7 @@ namespace OrsaprBed.UnitTests
 		/// Лист с назаванием параметров
 		/// </summary>
 		// TODO: ? 
-		/// <param name="nightstand">Экземпляр класса NightstandParameters</param>
+		/// <param name="bed">Экземпляр класса NightstandParameters</param>
 		/// <returns></returns>
 		private List<Parameter> InitializeParameters(BedParameters bed)
         {
@@ -74,7 +74,7 @@ namespace OrsaprBed.UnitTests
             // Setup
             Parameter myParameter;
 			// TODO: Зачем if\else? Можно просто использовать Assert.IsTrue()
-			if (TestingParameter.TryGetValue(nameParameter, out myParameter))
+			if (_testingParameter.TryGetValue(nameParameter, out myParameter))
             {
                 Parameter sourceParameter = new Parameter(
                     "Testing Parameter",
@@ -103,7 +103,7 @@ namespace OrsaprBed.UnitTests
             // Setup
             var nightstand = new BedParameters();
             var parameters = InitializeParameters(nightstand);
-            nightstand.MaxValue();
+            nightstand.SetMaxValue();
             foreach (var currentParameter in parameters)
             {
 
@@ -115,7 +115,7 @@ namespace OrsaprBed.UnitTests
 				// Assert
 				// TODO: убрать везде пространство имен NUnit.Framework.
 				// TODO: Уже есть using на это простраснво имен
-				NUnit.Framework.Assert.AreEqual(expectedValue, actualValue);
+				Assert.AreEqual(expectedValue, actualValue);
             }
         }
 
@@ -126,7 +126,7 @@ namespace OrsaprBed.UnitTests
             // Setup
             var nightstand = new BedParameters();
             var parameters = InitializeParameters(nightstand);
-            nightstand.MinValue();
+            nightstand.SetMinValue();
             foreach (var currentParameter in parameters)
             {
 
@@ -136,7 +136,7 @@ namespace OrsaprBed.UnitTests
                 var actualValue = currentParameter.Value;
 
                 // Assert
-                NUnit.Framework.Assert.AreEqual(expectedValue, actualValue);
+                Assert.AreEqual(expectedValue, actualValue);
             }
         }
 
@@ -147,7 +147,7 @@ namespace OrsaprBed.UnitTests
             // Setup
             var nightstand = new BedParameters();
             var parameters = InitializeParameters(nightstand);
-            nightstand.DefaultValue();
+            nightstand.SetDefaultValue();
             foreach (var currentParameter in parameters)
             {
 
@@ -157,7 +157,7 @@ namespace OrsaprBed.UnitTests
                 var actualValue = currentParameter.Value;
 
                 // Assert
-                NUnit.Framework.Assert.AreEqual(expectedValue, actualValue);
+               Assert.AreEqual(expectedValue, actualValue);
             }
         }
 

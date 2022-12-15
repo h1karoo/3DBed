@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace ModelParameters
 {
     /// <summary>
@@ -75,7 +76,7 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Максимальное значение не модет быть больше минимального = {_minValue}");
+                        throw new ArgumentException($"Максимальное значение не может быть больше минимального = {_minValue}");
                     }
                 }
                 else

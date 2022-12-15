@@ -92,6 +92,7 @@ namespace ModelBuilder
                 }
             }
         }
+        
         /// <summary>
         /// Метод для построения параллелипипеда
         /// </summary>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using ModelParameters;
 
 namespace ModelParameters
 {    
@@ -47,21 +48,20 @@ namespace ModelParameters
 		/// Свойство, присваивающее максимальное значение "
 		/// </summary>
 		// TODO: Лучше SetMaxValue
-		public void MaxValue()
+		public void SetMaxValue()
         {
             Width.Value = Width.MaximumValue;
             Length.Value = Length.MaximumValue;
             Height.Value = Height.MaximumValue;
             Thickness.Value = Thickness.MaximumValue;
             Distance.Value = Distance.MaximumValue;
-            
         }
 
 		// <summary>
 		/// Свойство, присваивающее минимальное значение "
 		/// </summary>
 		// TODO: Лучше SetMinValue
-		public void MinValue()
+		public void SetMinValue()
         {
             Width.Value = Width.MinimumValue;
             Length.Value = Length.MinimumValue;
@@ -73,7 +73,7 @@ namespace ModelParameters
 		/// Свойство, присваивающее значение по умолчанию для зависимых параметров
 		/// </summary>
 		// TODO: Лучше SetDefaultValue
-		public void DefaultValue()
+		public void SetDefaultValue()
         {
             Width.Value = Width.DefaultValue;
             Length.Value = Length.DefaultValue;
@@ -87,7 +87,7 @@ namespace ModelParameters
             this.Width = new Parameter("Ширина кровати",
                 1000, 2000, 1000);
             this.Length = new Parameter("Длина кровати",
-                1800,2100,1800);
+                1800, 2100, 1800);
             this.Height = new Parameter("Высота кровати",
                 400, 800, 400);
             this.Thickness = new Parameter("Толщина материала",

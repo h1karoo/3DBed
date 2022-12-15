@@ -2,8 +2,7 @@
 using Kompas6Constants3D;
 using System;
 using System.Runtime.InteropServices;
-// TODO: Не изменять значение на стандартное при ошибкe
-// TODO: Добавить зависимости
+
 
 
 namespace Kompas3DConnector
@@ -76,15 +75,5 @@ namespace Kompas3DConnector
                 InitializationKompas();
             }
         }
-
-		// TODO: ?
-		/// <summary>
-		/// Метод для выгрузки и выхода из компаса
-		/// </summary>
-
-		// TODO: ?
-		/// <summary>
-		/// Конструктор класса
-		/// </summary>
-	}
+    }
 }

@@ -61,6 +61,7 @@ namespace OrsaprBedUI
                     (BedParameters bed, string text) =>
                     {
                         bed.Width.Value = double.Parse(text);
+                        bed.Length.MaximumValue = Math.Round(bed.Width.Value + (bed.Width.Value / 3));
                     }
                 },
                 {
@@ -73,32 +74,26 @@ namespace OrsaprBedUI
                 {
                     textBoxHeight,
                     (BedParameters bed, string text) =>
-					{
-						// TODO: Зачем вторые фигурные скобки?
+                        // TODO: Зачем вторые фигурные скобки?
 						{
 							bed.Height.Value = double.Parse(text);
                         }
-                    }
                 },
                 {
                     textBoxThickness,
                     (BedParameters bed, string text) =>
-					{
-						// TODO: Зачем вторые фигурные скобки?
+                        // TODO: Зачем вторые фигурные скобки?
 						{
 							bed.Thickness.Value = double.Parse(text);
                         }
-                    }
                 },
                 {
                     textBoxDistance,
                     (BedParameters bed, string text) =>
-					{
-						// TODO: Зачем вторые фигурные скобки?
+                        // TODO: Зачем вторые фигурные скобки?
 						{
 							bed.Distance.Value = double.Parse(text);
                         }
-                    }
                 }
 
              };
@@ -129,7 +124,7 @@ namespace OrsaprBedUI
                 labelThickness,
                 labelDistance,
             };
-            _bed.DefaultValue();
+            _bed.SetDefaultValue();
             UpdateFormFields();
             SetLimits();
         }
@@ -168,7 +163,6 @@ namespace OrsaprBedUI
         /// Метод для проверки на соответствие сохраненных и введенных параметров
         /// </summary>
         /// <returns></returns>
-        // TODO: Можно ли вынести в бизнесс-логику?
         private bool Validate()
         {
             var smallestUpperBound = Math.Min(_textBoxList.Count, _parameters.Count);
@@ -181,7 +175,6 @@ namespace OrsaprBedUI
             }
             return true;
         }
-
         /// <summary>
         /// Метод, присваивающий значение предустановленных параметров в TextBox
         /// </summary>
@@ -216,6 +209,11 @@ namespace OrsaprBedUI
         private void buttonBuildBed_Click(object sender, EventArgs e)
         {
             _build.BuildBed(_bed);
+        }
+
+        private void textBoxThickness_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

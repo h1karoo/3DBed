@@ -114,6 +114,7 @@ namespace OrsaprBedUI
             this.textBoxThickness.Name = "textBoxThickness";
             this.textBoxThickness.Size = new System.Drawing.Size(110, 23);
             this.textBoxThickness.TabIndex = 12;
+            this.textBoxThickness.TextChanged += new System.EventHandler(this.textBoxThickness_TextChanged);
             this.textBoxThickness.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelThickness
