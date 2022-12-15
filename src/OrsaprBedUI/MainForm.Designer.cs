@@ -40,6 +40,8 @@ namespace OrsaprBedUI
             this.labelThickness = new System.Windows.Forms.Label();
             this.textBoxDistance = new System.Windows.Forms.TextBox();
             this.labelDistance = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // buttonBuildBed
@@ -144,11 +146,37 @@ namespace OrsaprBedUI
             this.labelDistance.TabIndex = 13;
             this.labelDistance.Text = "Расстояние от каркаса до верхней части кровати h (от 100 до 250мм):";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(40, 163);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(144, 19);
+            this.radioButton1.TabIndex = 15;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Одноярусная кровать";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(209, 163);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(148, 19);
+            this.radioButton2.TabIndex = 16;
+            this.radioButton2.Text = "Двухъярусная кровать";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 249);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBoxDistance);
             this.Controls.Add(this.labelDistance);
             this.Controls.Add(this.textBoxThickness);
@@ -183,6 +211,8 @@ namespace OrsaprBedUI
         private System.Windows.Forms.TextBox textBoxDistance;
         private System.Windows.Forms.Label labelDistance;
         private System.Windows.Forms.Label labelThickness;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 

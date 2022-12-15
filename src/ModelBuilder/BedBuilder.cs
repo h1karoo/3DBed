@@ -92,7 +92,48 @@ namespace ModelBuilder
                 }
             }
         }
-        
+        public void BuildTwoStoreyBed(BedParameters bed)
+        {
+            KompasConnector.Instance.InitializationKompas();
+            // Создание каркаса
+            {
+                BuildBed(bed);
+                // Создание второго этажа
+                CreateRectangle(
+                    -bed.Length.Value / 2 + bed.Thickness.Value,
+                    -bed.Width.Value / 2 + bed.Thickness.Value,
+                    bed.Length.Value - bed.Thickness.Value * 2,
+                    bed.Width.Value - bed.Thickness.Value ,
+                    bed.Thickness.Value, bed.Height.Value * 1.2);
+                // Создание правой боковой стенки
+                CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
+                    -bed.Width.Value / 2,
+                    bed.Length.Value - bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2, bed.Height.Value / 2,
+                    bed.Height.Value * 1.5);
+                // Создание левой боковой стенки
+                CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
+                    bed.Width.Value / 2 - bed.Thickness.Value,
+                    bed.Length.Value - bed.Thickness.Value * 2,
+                    bed.Thickness.Value, bed.Height.Value / 2,
+                    bed.Height.Value * 1.5);
+                // Создание задней стенки
+                CreateRectangle(-bed.Length.Value / 2,
+                    -bed.Width.Value / 2,
+                    bed.Thickness.Value * 2,
+                    bed.Width.Value,
+                    bed.Height.Value * 1.4,
+                    bed.Height.Value * 1.5);
+                // Создание изголовья
+                CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value * 2,
+                    -bed.Width.Value / 2,
+                    bed.Thickness.Value * 2,
+                    bed.Width.Value,
+                    bed.Height.Value * 1.4,
+                    bed.Height.Value * 1.5);
+            }
+        }
+
         /// <summary>
         /// Метод для построения параллелипипеда
         /// </summary>

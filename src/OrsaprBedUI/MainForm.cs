@@ -208,10 +208,27 @@ namespace OrsaprBedUI
         /// </summary>
         private void buttonBuildBed_Click(object sender, EventArgs e)
         {
-            _build.BuildBed(_bed);
+            if (radioButton1.Checked == true)
+            {
+                _build.BuildBed(_bed);
+            }
+            else
+            {
+                _build.BuildTwoStoreyBed(_bed);
+            }
         }
 
         private void textBoxThickness_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
