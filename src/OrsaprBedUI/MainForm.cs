@@ -74,7 +74,6 @@ namespace OrsaprBedUI
                 {
                     textBoxHeight,
                     (BedParameters bed, string text) =>
-                        // TODO: Зачем вторые фигурные скобки?
 						{
 							bed.Height.Value = double.Parse(text);
                         }
@@ -82,7 +81,6 @@ namespace OrsaprBedUI
                 {
                     textBoxThickness,
                     (BedParameters bed, string text) =>
-                        // TODO: Зачем вторые фигурные скобки?
 						{
 							bed.Thickness.Value = double.Parse(text);
                         }
@@ -90,7 +88,6 @@ namespace OrsaprBedUI
                 {
                     textBoxDistance,
                     (BedParameters bed, string text) =>
-                        // TODO: Зачем вторые фигурные скобки?
 						{
 							bed.Distance.Value = double.Parse(text);
                         }

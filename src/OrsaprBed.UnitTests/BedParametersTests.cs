@@ -6,7 +6,6 @@ using ModelParameters;
 
 namespace OrsaprBed.UnitTests
 {
-    // TODO: XML
     /// <summary>
     /// Класс для тестирования параметров кровати
     /// </summary>
@@ -16,7 +15,6 @@ namespace OrsaprBed.UnitTests
         /// <summary>
         /// Словарь для хранения сведения о параметров кровать
         /// </summary>
-        // TODO: RSDN
         private Dictionary<string, Parameter> _testingParameter
         {
             get
@@ -36,7 +34,6 @@ namespace OrsaprBed.UnitTests
 		/// <summary>
 		/// Лист с назаванием параметров
 		/// </summary>
-		// TODO: ? 
 		/// <param name="bed">Экземпляр класса NightstandParameters</param>
 		/// <returns></returns>
 		private List<Parameter> InitializeParameters(BedParameters bed)
@@ -107,8 +104,6 @@ namespace OrsaprBed.UnitTests
                 var actualValue = currentParameter.Value;
 
 				// Assert
-				// TODO: убрать везде пространство имен NUnit.Framework.
-				// TODO: Уже есть using на это простраснво имен
 				Assert.AreEqual(expectedValue, actualValue);
             }
         }

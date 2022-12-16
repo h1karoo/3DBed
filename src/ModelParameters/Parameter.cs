@@ -138,9 +138,10 @@ namespace ModelParameters
         public double DefaultValue
         {
             get => _defaultValue;
+            // TODO: убрать set, тк не используется
             set
             {
-                if (_maxValue > 0 && _minValue > 0)
+	            if (_maxValue > 0 && _minValue > 0)
                 {
                     if (value <= _maxValue && value >= _minValue)
                     {

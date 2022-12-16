@@ -47,7 +47,6 @@ namespace ModelParameters
 		// <summary>
 		/// Свойство, присваивающее максимальное значение "
 		/// </summary>
-		// TODO: Лучше SetMaxValue
 		public void SetMaxValue()
         {
             Width.Value = Width.MaximumValue;
@@ -60,7 +59,6 @@ namespace ModelParameters
 		// <summary>
 		/// Свойство, присваивающее минимальное значение "
 		/// </summary>
-		// TODO: Лучше SetMinValue
 		public void SetMinValue()
         {
             Width.Value = Width.MinimumValue;
@@ -72,7 +70,6 @@ namespace ModelParameters
 		/// <summary>
 		/// Свойство, присваивающее значение по умолчанию для зависимых параметров
 		/// </summary>
-		// TODO: Лучше SetDefaultValue
 		public void SetDefaultValue()
         {
             Width.Value = Width.DefaultValue;

@@ -5,7 +5,6 @@ using ModelParameters;
 
 namespace OrsaprBed.UnitTests
 {
-    // TODO: XML
     /// <summary>
     /// Класс для тестирования NameParameter, Value, MinValue, MaxValue
     /// </summary>
