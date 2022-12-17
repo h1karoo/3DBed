@@ -64,8 +64,8 @@ namespace OrsaprBed.UnitTests
         {
             // Setup
             Parameter myParameter;
-			// TODO: Зачем if\else? Можно просто использовать Assert.IsTrue()
-			if (_testingParameter.TryGetValue(nameParameter, out myParameter))
+            // TODO: Зачем if\else? Можно просто использовать Assert.IsTrue()
+            Assert.IsTrue(_testingParameter.TryGetValue(nameParameter, out myParameter));
             {
                 Parameter sourceParameter = new Parameter(
                     "Testing Parameter",
@@ -77,13 +77,9 @@ namespace OrsaprBed.UnitTests
                 // Act
                 myParameter = sourceParameter;
                 var actualParameter = myParameter;
-               
-				//Assert
-				Assert.AreEqual(expectedParameter, actualParameter);
-            }
-            else
-            {
-                throw new ArgumentException("Name parameter not found");
+
+                //Assert
+                Assert.AreEqual(expectedParameter, actualParameter);
             }
         }
 

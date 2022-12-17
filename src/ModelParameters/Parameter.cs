@@ -138,26 +138,9 @@ namespace ModelParameters
         public double DefaultValue
         {
             get => _defaultValue;
-            // TODO: убрать set, тк не используется
             set
             {
-	            if (_maxValue > 0 && _minValue > 0)
-                {
-                    if (value <= _maxValue && value >= _minValue)
-                    {
-                        _defaultValue = value;
-                    }
-                    else
-                    {
-                        throw new ArgumentException($"Параметр {NameParameter} " +
-                                                    $"должен быть меньше {_maxValue} " +
-                                                    $"и больше {_minValue}");
-                    }
-                }
-                else
-                {
-                    throw new ArgumentException($"Максимальное и минимальное значение параметра {NameParameter} не установлено" );
-                }
+                _defaultValue = value;
             }
         }
 
