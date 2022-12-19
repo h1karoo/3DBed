@@ -20,6 +20,7 @@ namespace ModelBuilder
             KompasConnector.Instance.InitializationKompas();
             // Создание каркаса
             {
+	            // TODO: дубль в if и else
                 if (bed.Width.Value > 1500)
                 {
                     CreateRectangle(
@@ -95,9 +96,10 @@ namespace ModelBuilder
         public void BuildTwoStoreyBed(BedParameters bed)
         {
             KompasConnector.Instance.InitializationKompas();
-            // Создание каркаса
-            {
-                BuildBed(bed);
+			// TODO: дубль с методом BuildBed
+			// Создание каркаса
+			{
+				BuildBed(bed);
                 // Создание второго этажа
                 CreateRectangle(
                     -bed.Length.Value / 2 + bed.Thickness.Value,

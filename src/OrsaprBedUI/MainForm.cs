@@ -156,6 +156,7 @@ namespace OrsaprBedUI
                 }
             }
         }
+
         /// <summary>
         /// Метод для проверки на соответствие сохраненных и введенных параметров
         /// </summary>
@@ -172,6 +173,7 @@ namespace OrsaprBedUI
             }
             return true;
         }
+
         /// <summary>
         /// Метод, присваивающий значение предустановленных параметров в TextBox
         /// </summary>
@@ -198,8 +200,6 @@ namespace OrsaprBedUI
             }
         }
 
-
-
         /// <summary>
         /// Кнопка для построения кровати
         /// </summary>
@@ -215,17 +215,20 @@ namespace OrsaprBedUI
             }
         }
 
+        // TODO: Нет тела метода. Нужен?
         private void textBoxThickness_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        // TODO: Нет тела метода. Нужен?
+		private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+		// TODO: Нет тела метода. Нужен?
+		private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }

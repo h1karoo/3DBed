@@ -40,7 +40,7 @@ namespace ModelParameters
         public Parameter Thickness { get; set; }
 
         /// <summary>
-        /// Поле, содержащее растояние от каркаса до верхней части кровати "
+        /// Поле, содержащее растояние от каркаса до верхней части кровати
         /// </summary>
         public Parameter Distance { get; set; }
 

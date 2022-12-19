@@ -49,42 +49,39 @@ namespace OrsaprBed.UnitTests
             return parameters;
         }
 
-        [TestCase("Width", TestName = "Позитивный метод для BodyDiameter, производится ввод и " +
-                                             "считывание параметров")]
-        [TestCase("Height", TestName = "Позитивный метод для BodyHeight, производится ввод и " +
-                                          "считывание параметров")]
-        [TestCase("Length", TestName = "Позитивный метод для SocketPlatformDiameter," +
-                                                       " производится ввод и считывание параметров")]
-        [TestCase("Thickness", TestName = "Позитивный метод для SocketPlatformDiameter," +
-                                                       " производится ввод и считывание параметров")]
+		[TestCase("Width", TestName = "Позитивный метод для BodyDiameter, производится ввод и " +
+		                              "считывание параметров")]
+		[TestCase("Height", TestName = "Позитивный метод для BodyHeight, производится ввод и " +
+		                               "считывание параметров")]
+		[TestCase("Length", TestName = "Позитивный метод для SocketPlatformDiameter," +
+		                               " производится ввод и считывание параметров")]
+		[TestCase("Thickness", TestName = "Позитивный метод для SocketPlatformDiameter," +
+		                                  " производится ввод и считывание параметров")]
 
-        [TestCase("Distance", TestName = "Позитивный метод для TubeDiameter, производится ввод и" +
-                                             " считывание параметров")]
-        public void Test_GoodParameter_ReternSameParameter(string nameParameter)
-        {
-            // Setup
-            Parameter myParameter;
-            // TODO: Зачем if\else? Можно просто использовать Assert.IsTrue()
-            Assert.IsTrue(_testingParameter.TryGetValue(nameParameter, out myParameter));
-            {
-                Parameter sourceParameter = new Parameter(
-                    "Testing Parameter",
-                    1800,
-                    2000,
-                    1900);
-                var expectedParameter = sourceParameter;
+		[TestCase("Distance", TestName = "Позитивный метод для TubeDiameter, производится ввод и" +
+		                                 " считывание параметров")]
+		public void Test_GoodParameter_ReternSameParameter(string nameParameter)
+		{
+			// Setup
+			Parameter myParameter;
+			Assert.IsTrue(_testingParameter.TryGetValue(nameParameter, out myParameter));
+			Parameter sourceParameter = new Parameter(
+				"Testing Parameter",
+				1800,
+				2000,
+				1900);
+			var expectedParameter = sourceParameter;
 
-                // Act
-                myParameter = sourceParameter;
-                var actualParameter = myParameter;
+			// Act
+			myParameter = sourceParameter;
+			var actualParameter = myParameter;
 
-                //Assert
-                Assert.AreEqual(expectedParameter, actualParameter);
-            }
-        }
+			//Assert
+			Assert.AreEqual(expectedParameter, actualParameter);
+		}
 
-        [TestCase(TestName = "Позитивный метод для MaxValue, производится ввод и считывание " +
-                             "параметров")]
+		[TestCase(TestName = "Позитивный метод для MaxValue, производится ввод и считывание " +
+		                     "параметров")]
         public void MaxValue_GoodNightstandParameters_MaximumValueEqualValue()
         {
             // Setup
