@@ -21,9 +21,7 @@ namespace ModelBuilder
             // Создание каркаса
             {
 	            // TODO: дубль в if и else
-                if (bed.Width.Value > 1500)
-                {
-                    CreateRectangle(
+                CreateRectangle(
                         -bed.Length.Value / 2 + bed.Thickness.Value,
                         -bed.Width.Value / 2 + bed.Thickness.Value,
                         bed.Length.Value - bed.Thickness.Value * 2,
@@ -55,42 +53,6 @@ namespace ModelBuilder
                         bed.Width.Value,
                         bed.Height.Value,
                         bed.Distance.Value);
-                }
-                else
-                {
-                    CreateRectangle(
-                        -bed.Length.Value / 2 + bed.Thickness.Value,
-                        -bed.Width.Value / 2 + bed.Thickness.Value,
-                        bed.Length.Value - bed.Thickness.Value * 2,
-                        bed.Width.Value - bed.Thickness.Value * 2,
-                        bed.Thickness.Value, 0);
-                    // Создание правой боковой стенки
-                    CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
-                        -bed.Width.Value / 2,
-                        bed.Length.Value - bed.Thickness.Value * 2,
-                        bed.Thickness.Value, bed.Height.Value,
-                        bed.Distance.Value);
-                    // Создание левой боковой стенки
-                    CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
-                        bed.Width.Value / 2 - bed.Thickness.Value,
-                        bed.Length.Value - bed.Thickness.Value * 2,
-                        bed.Thickness.Value, bed.Height.Value,
-                        bed.Distance.Value);
-                    // Создание задней стенки
-                    CreateRectangle(-bed.Length.Value / 2,
-                        -bed.Width.Value / 2,
-                        bed.Thickness.Value,
-                        bed.Width.Value,
-                        bed.Height.Value,
-                        bed.Distance.Value);
-                    // Создание изголовья
-                    CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value,
-                        -bed.Width.Value / 2,
-                        bed.Thickness.Value,
-                        bed.Width.Value,
-                        bed.Height.Value,
-                        bed.Distance.Value);
-                }
             }
         }
         public void BuildTwoStoreyBed(BedParameters bed)
@@ -106,33 +68,61 @@ namespace ModelBuilder
                     -bed.Width.Value / 2 + bed.Thickness.Value,
                     bed.Length.Value - bed.Thickness.Value * 2,
                     bed.Width.Value - bed.Thickness.Value ,
-                    bed.Thickness.Value, bed.Height.Value * 1.2);
+                    bed.Thickness.Value, bed.TwoStorey.Value - bed.Distance.Value);
                 // Создание правой боковой стенки
                 CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
                     -bed.Width.Value / 2,
                     bed.Length.Value - bed.Thickness.Value * 2,
                     bed.Thickness.Value * 2, bed.Height.Value / 2,
-                    bed.Height.Value * 1.5);
+                    bed.TwoStorey.Value);
                 // Создание левой боковой стенки
                 CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value,
                     bed.Width.Value / 2 - bed.Thickness.Value,
                     bed.Length.Value - bed.Thickness.Value * 2,
                     bed.Thickness.Value, bed.Height.Value / 2,
-                    bed.Height.Value * 1.5);
+                    bed.TwoStorey.Value);
+                // Создание ножек
+                CreateRectangle(-bed.Length.Value / 2,
+                    -bed.Width.Value / 2,
+                    bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2,
+                    bed.Height.Value * 1.75,
+                    bed.TwoStorey.Value);
                 // Создание задней стенки
                 CreateRectangle(-bed.Length.Value / 2,
                     -bed.Width.Value / 2,
                     bed.Thickness.Value * 2,
-                    bed.Width.Value,
-                    bed.Height.Value * 1.4,
-                    bed.Height.Value * 1.5);
+                    bed.Width.Value ,
+                    bed.Height.Value / 2,
+                    bed.TwoStorey.Value);
+                // Создание ножек
+                CreateRectangle(-bed.Length.Value / 2,
+                    bed.Width.Value - bed.Width.Value / 2 - bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2,
+                    bed.Height.Value * 1.75,
+                    bed.TwoStorey.Value);
+                //создание ножек
+                CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value * 2,
+                    -bed.Width.Value / 2,
+                    bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2,
+                    bed.Height.Value * 1.75,
+                    bed.TwoStorey.Value);
                 // Создание изголовья
                 CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value * 2,
                     -bed.Width.Value / 2,
                     bed.Thickness.Value * 2,
                     bed.Width.Value,
-                    bed.Height.Value * 1.4,
-                    bed.Height.Value * 1.5);
+                    bed.Height.Value / 2,
+                    bed.TwoStorey.Value);
+                //создание ножек
+                CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value * 2,
+                    bed.Width.Value / 2 - bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2,
+                    bed.Thickness.Value * 2,
+                    bed.Height.Value * 1.75,
+                    bed.TwoStorey.Value);
             }
         }
 

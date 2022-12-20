@@ -42,6 +42,8 @@ namespace OrsaprBedUI
             this.labelDistance = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.textBoxTwoStorey = new System.Windows.Forms.TextBox();
+            this.labelTwoStorey = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonBuildBed
@@ -116,7 +118,6 @@ namespace OrsaprBedUI
             this.textBoxThickness.Name = "textBoxThickness";
             this.textBoxThickness.Size = new System.Drawing.Size(110, 23);
             this.textBoxThickness.TabIndex = 12;
-            this.textBoxThickness.TextChanged += new System.EventHandler(this.textBoxThickness_TextChanged);
             this.textBoxThickness.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelThickness
@@ -135,6 +136,7 @@ namespace OrsaprBedUI
             this.textBoxDistance.Name = "textBoxDistance";
             this.textBoxDistance.Size = new System.Drawing.Size(110, 23);
             this.textBoxDistance.TabIndex = 14;
+            this.textBoxDistance.TextChanged += new System.EventHandler(this.textBoxDistance_TextChanged);
             this.textBoxDistance.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelDistance
@@ -170,11 +172,33 @@ namespace OrsaprBedUI
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
+            // textBoxTwoStorey
+            // 
+            this.textBoxTwoStorey.Visible = false;
+            this.textBoxTwoStorey.Location = new System.Drawing.Point(497, 165);
+            this.textBoxTwoStorey.Name = "textBoxTwoStorey";
+            this.textBoxTwoStorey.Size = new System.Drawing.Size(110, 23);
+            this.textBoxTwoStorey.TabIndex = 17;
+            this.textBoxTwoStorey.TextChanged += new System.EventHandler(this.textBoxDistance_TextChanged);
+            this.textBoxTwoStorey.Leave += new System.EventHandler(this.TextBoxLeave);
+            // 
+            // labelTwoStorey
+            // 
+            this.labelTwoStorey.AutoSize = true;
+            this.labelTwoStorey.Location = new System.Drawing.Point(363, 168);
+            this.labelTwoStorey.Name = "labelTwoStorey";
+            this.labelTwoStorey.Size = new System.Drawing.Size(47, 15);
+            this.labelTwoStorey.TabIndex = 18;
+            this.labelTwoStorey.Text = "Высота";
+            this.labelTwoStorey.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 249);
+            this.Controls.Add(this.labelTwoStorey);
+            this.Controls.Add(this.textBoxTwoStorey);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBoxDistance);
@@ -213,6 +237,8 @@ namespace OrsaprBedUI
         private System.Windows.Forms.Label labelThickness;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox textBoxTwoStorey;
+        private System.Windows.Forms.Label labelTwoStorey;
     }
 }
 

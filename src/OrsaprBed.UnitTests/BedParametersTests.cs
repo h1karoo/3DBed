@@ -64,21 +64,21 @@ namespace OrsaprBed.UnitTests
 		{
 			// Setup
 			Parameter myParameter;
-			Assert.IsTrue(_testingParameter.TryGetValue(nameParameter, out myParameter));
-			Parameter sourceParameter = new Parameter(
-				"Testing Parameter",
-				1800,
-				2000,
-				1900);
-			var expectedParameter = sourceParameter;
+            Assert.IsTrue(_testingParameter.TryGetValue(nameParameter, out myParameter));
+            Parameter sourceParameter = new Parameter(
+                    "Testing Parameter",
+                    1800,
+                    2000,
+                    1900);
+                var expectedParameter = sourceParameter;
 
-			// Act
-			myParameter = sourceParameter;
-			var actualParameter = myParameter;
+                // Act
+                myParameter = sourceParameter;
+                var actualParameter = myParameter;
 
-			//Assert
-			Assert.AreEqual(expectedParameter, actualParameter);
-		}
+                //Assert
+                Assert.AreEqual(expectedParameter, actualParameter);
+        }
 
 		[TestCase(TestName = "Позитивный метод для MaxValue, производится ввод и считывание " +
 		                     "параметров")]

@@ -23,6 +23,7 @@ namespace ModelParameters
         /// </summary>
         public Parameter Length { get; set; }
 
+
         /// <summary>
         /// Поле, содержащее ширину кровати
         /// </summary>
@@ -43,17 +44,22 @@ namespace ModelParameters
         /// Поле, содержащее растояние от каркаса до верхней части кровати
         /// </summary>
         public Parameter Distance { get; set; }
+        /// <summary>
+        /// Поле, содержащее высоту второй кровати
+        /// </summary>
+        public Parameter TwoStorey { get; set; }
 
-		// <summary>
-		/// Свойство, присваивающее максимальное значение "
-		/// </summary>
-		public void SetMaxValue()
+        // <summary>
+        /// Свойство, присваивающее максимальное значение "
+        /// </summary>
+        public void SetMaxValue()
         {
             Width.Value = Width.MaximumValue;
             Length.Value = Length.MaximumValue;
             Height.Value = Height.MaximumValue;
             Thickness.Value = Thickness.MaximumValue;
             Distance.Value = Distance.MaximumValue;
+            TwoStorey.Value = TwoStorey.MaximumValue;
         }
 
 		// <summary>
@@ -66,6 +72,7 @@ namespace ModelParameters
             Height.Value = Height.MinimumValue;
             Thickness.Value = Thickness.MinimumValue;
             Distance.Value = Distance.MinimumValue;
+            TwoStorey.Value = TwoStorey.MinimumValue;
         }
 		/// <summary>
 		/// Свойство, присваивающее значение по умолчанию для зависимых параметров
@@ -77,6 +84,7 @@ namespace ModelParameters
             Height.Value = Height.DefaultValue;
             Thickness.Value = Thickness.DefaultValue;
             Distance.Value = Distance.DefaultValue;
+            TwoStorey.Value = TwoStorey.DefaultValue;
         }
 
         public BedParameters()
@@ -91,6 +99,8 @@ namespace ModelParameters
                 8, 14, 10);
             this.Distance = new Parameter("Расстояние от каркаса до верхней части кровати",
                 100, 250, 100);
+            this.TwoStorey = new Parameter("Высота",
+                500, 800,600);
 
             parameters = new List<Parameter>
             {
@@ -99,6 +109,7 @@ namespace ModelParameters
                 Height,
                 Thickness,
                 Distance,
+                TwoStorey,
             };
 
         }

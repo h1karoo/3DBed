@@ -140,7 +140,23 @@ namespace ModelParameters
             get => _defaultValue;
             set
             {
-                _defaultValue = value;
+                if (_maxValue > 0 && _minValue > 0)
+                {
+                    if (true)
+                    {
+                        _defaultValue = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentException($"Параметр {NameParameter} " +
+                                                    $"должен быть меньше {_maxValue} " +
+                                                    $"и больше {_minValue}");
+                    }
+                }
+                else
+                {
+                    throw new ArgumentException($"Максимальное и минимальное значение параметра {NameParameter} не установлено");
+                }
             }
         }
 

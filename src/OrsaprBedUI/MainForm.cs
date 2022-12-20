@@ -91,9 +91,16 @@ namespace OrsaprBedUI
 						{
 							bed.Distance.Value = double.Parse(text);
                         }
-                }
+                },
+                {
+                    textBoxTwoStorey,
+                    (BedParameters bed, string text) =>
+                    {
+                        bed.TwoStorey.Value = double.Parse(text);
+                    }
+                },
 
-             };
+            };
 
             _parameters = new List<Parameter>
             {
@@ -102,6 +109,7 @@ namespace OrsaprBedUI
                 _bed.Height,
                 _bed.Thickness,
                 _bed.Distance,
+                _bed.TwoStorey,
             };
 
             _textBoxList = new List<TextBox>()
@@ -111,6 +119,7 @@ namespace OrsaprBedUI
                 textBoxHeight,
                 textBoxThickness,
                 textBoxDistance,
+                textBoxTwoStorey,
             };
 
             _labelList = new List<Label>
@@ -120,6 +129,7 @@ namespace OrsaprBedUI
                 labelHeight,
                 labelThickness,
                 labelDistance,
+                labelTwoStorey,
             };
             _bed.SetDefaultValue();
             UpdateFormFields();
@@ -216,19 +226,22 @@ namespace OrsaprBedUI
         }
 
         // TODO: Нет тела метода. Нужен?
-        private void textBoxThickness_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         // TODO: Нет тела метода. Нужен?
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            textBoxTwoStorey.Visible = false;
+            labelTwoStorey.Visible = false;
         }
 
 		// TODO: Нет тела метода. Нужен?
 		private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxTwoStorey.Visible = true;
+            labelTwoStorey.Visible = true;
+        }
+
+        private void textBoxDistance_TextChanged(object sender, EventArgs e)
         {
 
         }
