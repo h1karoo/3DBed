@@ -215,17 +215,10 @@ namespace OrsaprBedUI
         /// </summary>
         private void buttonBuildBed_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true)
-            {
-                _build.BuildBed(_bed);
-            }
-            else
-            {
-                _build.BuildTwoStoreyBed(_bed);
-            }
+            _build.BuildBed(_bed, radioButton2.Checked);
         }
-        
-		private void radioButton1_CheckedChanged(object sender, EventArgs e)
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             textBoxTwoStorey.Visible = false;
             labelTwoStorey.Visible = false;
@@ -238,10 +231,6 @@ namespace OrsaprBedUI
         }
 
 		// TODO: Нет тела метода. Нужен?
-		private void textBoxDistance_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

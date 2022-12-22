@@ -136,7 +136,6 @@ namespace OrsaprBedUI
             this.textBoxDistance.Name = "textBoxDistance";
             this.textBoxDistance.Size = new System.Drawing.Size(110, 23);
             this.textBoxDistance.TabIndex = 14;
-            this.textBoxDistance.TextChanged += new System.EventHandler(this.textBoxDistance_TextChanged);
             this.textBoxDistance.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelDistance
@@ -179,7 +178,6 @@ namespace OrsaprBedUI
             this.textBoxTwoStorey.Name = "textBoxTwoStorey";
             this.textBoxTwoStorey.Size = new System.Drawing.Size(110, 23);
             this.textBoxTwoStorey.TabIndex = 17;
-            this.textBoxTwoStorey.TextChanged += new System.EventHandler(this.textBoxDistance_TextChanged);
             this.textBoxTwoStorey.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelTwoStorey
