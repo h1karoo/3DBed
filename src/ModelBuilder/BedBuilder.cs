@@ -20,7 +20,6 @@ namespace ModelBuilder
             KompasConnector.Instance.InitializationKompas();
             // Создание каркаса
             {
-	            // TODO: дубль в if и else
                 CreateRectangle(
                         -bed.Length.Value / 2 + bed.Thickness.Value,
                         -bed.Width.Value / 2 + bed.Thickness.Value,
@@ -58,12 +57,12 @@ namespace ModelBuilder
         public void BuildTwoStoreyBed(BedParameters bed)
         {
             KompasConnector.Instance.InitializationKompas();
-			// TODO: дубль с методом BuildBed
 			// Создание каркаса
 			{
 				BuildBed(bed);
-                // Создание второго этажа
-                CreateRectangle(
+				// TODO: дубль с методом BuildBed
+				// Создание второго этажа
+				CreateRectangle(
                     -bed.Length.Value / 2 + bed.Thickness.Value,
                     -bed.Width.Value / 2 + bed.Thickness.Value,
                     bed.Length.Value - bed.Thickness.Value * 2,

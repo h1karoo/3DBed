@@ -224,24 +224,21 @@ namespace OrsaprBedUI
                 _build.BuildTwoStoreyBed(_bed);
             }
         }
-
-        // TODO: Нет тела метода. Нужен?
-
-        // TODO: Нет тела метода. Нужен?
+        
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             textBoxTwoStorey.Visible = false;
             labelTwoStorey.Visible = false;
         }
 
-		// TODO: Нет тела метода. Нужен?
 		private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             textBoxTwoStorey.Visible = true;
             labelTwoStorey.Visible = true;
         }
 
-        private void textBoxDistance_TextChanged(object sender, EventArgs e)
+		// TODO: Нет тела метода. Нужен?
+		private void textBoxDistance_TextChanged(object sender, EventArgs e)
         {
 
         }
