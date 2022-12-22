@@ -229,8 +229,6 @@ namespace OrsaprBedUI
             textBoxTwoStorey.Visible = true;
             labelTwoStorey.Visible = true;
         }
-
-		// TODO: Нет тела метода. Нужен?
     }
 }
 
